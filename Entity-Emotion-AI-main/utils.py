@@ -14,7 +14,7 @@ bert_model = AutoModel.from_pretrained("dbmdz/bert-base-turkish-128k-uncased").t
 
 # Modelinizi yükleyin
 try:
-    model = joblib.load('C:/Users/PC/Downloads/Entity-Emotion-AI-main/Entity-Emotion-AI-main/teknofest_model_final.joblib')
+    model = joblib.load('C:/Users/PC/Downloads/Entity-Emotion-AI-main/teknofest_model_final_2.joblib')
 except Exception as e:
     raise RuntimeError(f"Model yüklenirken bir hata oluştu: {e}")
 

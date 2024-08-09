@@ -8,10 +8,10 @@ app = FastAPI()
 
 class Item(BaseModel):
     text: str = Field(...,
-                      example="""Fiber 100mb SuperOnline kullanıcısıyım yaklaşık 2 haftadır @Twitch @Kick_Turkey gibi canlı yayın platformlarında 360p yayın izlerken donmalar yaşıyoruz. Başka hiç bir operatörler bu sorunu yaşamazken ben parasını verip alamadığım hizmeti neden ödeyeyim ? @Turkcell""")
+                      example="""Superonline'ın internet bağlantısı mükemmel, fakat kurulum süreci karmaşık.""")
 
 
-@app.post("/predict/", response_model=dict)
+@app.post("/predict", response_model=dict)
 async def predict(item: Item):
     text = item.text
     print(f"Received text: {text}")
@@ -56,4 +56,4 @@ async def predict(item: Item):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=5331)

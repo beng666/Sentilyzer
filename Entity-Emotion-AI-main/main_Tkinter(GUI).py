@@ -21,7 +21,7 @@ label_map = {0: "olumsuz", 1: "nötr", 2: "olumlu"}
 reverse_label_map = {v: k for k, v in label_map.items()}
 
 # Modelinizi yükleyin
-model = joblib.load('C:/Users/PC/Downloads/Entity-Emotion-AI-main/Entity-Emotion-AI-main/teknofest_model_final.joblib')
+model = joblib.load('C:/Users/PC/Downloads/Entity-Emotion-AI-main/Entity-Emotion-AI-main/teknofest_model_final_2.joblib')
 
 
 def clean_text(text):

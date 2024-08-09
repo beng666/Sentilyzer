@@ -66,7 +66,7 @@ def feature_extraction(text, tokenizer, bert, max_length=512):
 
 # Verileri ön işleme
 preprocess_data('train.csv', 'preprocessed_data.csv')
-preprocess_data('test.csv', 'preprocessed_test.csv')
+#preprocess_data('test.csv', 'preprocessed_test.csv')
 
 df_train = pd.read_csv('preprocessed_data.csv')
 df_test = pd.read_csv('preprocessed_test.csv')
@@ -135,7 +135,7 @@ y_pred = model.predict(X_test.tolist())
 print(classification_report(y_test, y_pred))
 
 # Modeli kaydetme
-model_path = 'C:/Users/PC/PycharmProjects/teknofest/teknofest_model_final.joblib'
+model_path = 'C:/Users/PC/Downloads/Entity-Emotion-AI-main/Entity-Emotion-AI-main/teknofest_model_final_2.joblib'
 os.makedirs(os.path.dirname(model_path), exist_ok=True)
 joblib.dump(model, model_path)
 print("Model başarıyla kaydedildi:", model_path)
