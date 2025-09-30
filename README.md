@@ -1,56 +1,39 @@
-# Sentilyzer
+# Sentilyzer 📝
 
-**Sentilyzer**, Türkçe metinlerde entity (varlık) bazlı duygu analizi (sentiment analysis) yapmayı sağlayan bir projedir. Bu proje, BERT tabanlı bir model ile çalışmakta ve çeşitli araçlar ile zenginleştirilmiş bir GUI (Grafik Kullanıcı Arayüzü) sunmaktadır. Ayrıca, FastAPI ile sağlanan bir API üzerinden Swagger UI kullanarak da test edilebilir.
+Sentilyzer is a lightweight Python application for **sentiment analysis**.  
+It classifies text into categories such as *positive*, *negative*, or *neutral*, making it useful for analyzing product reviews, social media comments, or any kind of text data.
 
-## Proje Bileşenleri
+---
 
-### 1. `utils.py`
-Bu modül, metin işleme, duygu tahmini, entity tespiti gibi temel işlevleri içerir.
+## ✨ Features
+- **Sentiment Analysis** – Classifies text sentiment with simple and fast predictions.  
+- **NLP Pipeline** – Uses common Python NLP libraries for text preprocessing.  
+- **Easy to Extend** – You can integrate it with datasets, APIs, or GUIs.  
 
-- **SpaCy** modelini kullanarak metinlerdeki entity'leri tanır.
-- **BERT** modelini kullanarak metinlerin vektör temsillerini çıkarır.
-- MLPClassifier modelini kullanarak entity'lerin context'lerini analiz ederek sentiment tahmini yapar.
+---
 
-### 2. `main.py`
-Bu dosya, FastAPI framework'ü ile yazılmış bir API uygulamasıdır.
+## 🛠 Tech Stack
+- **Python**  
+- **NLTK / scikit-learn** (depending on implementation)  
+- Basic preprocessing (tokenization, stopwords, etc.)  
 
-- `POST /predict` endpoint'i, bir metin girdisi alır ve bu metindeki entity'lerin bağlamını (context) analiz eder ve sentiment tahminlerini döner.
-- FastAPI ile entegre edilmiş Swagger UI aracılığıyla bu endpoint'leri doğrudan web tarayıcınızdan test edebilirsiniz.
-- Arka planda, `utils.py` dosyasındaki fonksiyonları kullanarak sentiment analizini gerçekleştirir.
+---
 
-### 3. `train_for_sentiment_analysis.py`
-Bu dosya, bir veri kümesini kullanarak modeli eğitmek için kullanılan Python script'idir.
+## 📥 Installation
 
-- Veriyi temizler, stop word'leri çıkarır ve özellik vektörleri çıkarır.
-- MLPClassifier kullanarak sentiment sınıflandırma modeli eğitir ve bu modeli kaydeder.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bengssy/Sentilyzer.git
+   cd Sentilyzer
+   ```
+2. Create a virtual environment and install dependencies:
+  ```bash
+   python -m venv venv
+   # Windows
+   .\venv\Scripts\activate
+   # macOS/Linux
+   source venv/bin/activate
 
-### 4. `main_Tkinter(GUI).py`
-Bu dosya, Tkinter kullanarak bir GUI uygulaması sunar.
+   pip install -r requirements.txt
+```
 
-- Kullanıcıdan JSON formatında bir metin alır, bunu işler ve sonuçları kullanıcıya gösterir.
-
-
-### 5. `matplotlib_ile_değerlendirme.py`
-Bu dosya, eğitim ve test sonuçlarını değerlendirmek için matplotlib kullanarak grafikler oluşturur.
-
-## Kurulum
-
-### Gereksinimler
-Proje Python 3.8+ ile uyumludur. Aşağıdaki bağımlılıkları kurmanız gerekmektedir:
-
-- `torch`
-- `transformers`
-- `spacy`
-- `joblib`
-- `scikit-learn`
-- `pandas`
-- `matplotlib`
-- `tkinter`
-- `nltk`
-- `fastapi`
-- `uvicorn`
-
-Tüm bağımlılıkları yüklemek için:
-
-```bash
-pip install -r requirements.txt
